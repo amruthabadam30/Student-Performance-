@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <h1>🎓 Prediction Result</h1>
+
+    <h2>Predicted Final Score</h2>
+
+    <div class="result-box">
+        <div class="result-score">{{ score }}</div>
+        <div class="result-label">out of 100</div>
+    </div>
+
+    <div class="progress-wrap">
+        <div class="progress-label">
+            <span>0</span>
+            <span>Score Progress</span>
+            <span>100</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" style="width: {{ score }}%"></div>
+        </div>
+    </div>
+
+    <div class="model-info">
+        <h3>📊 Model Performance</h3>
+        <p>✅ R² Score: {{ r2 }} &nbsp;(Model is 90% accurate)</p>
+        <p>📏 Average Error: ± {{ mae }} marks</p>
+    </div>
+
+    <a href="/">
+        <button>← Predict Again</button>
+    </a>
+
+</div>
+</body>
+</html>

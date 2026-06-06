@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Score Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <h1>🎓 Student Performance Predictor</h1>
+
+    <form action="/predict" method="POST">
+
+        <div class="input-container">
+            <label class="input-label">📝 Internal Marks</label>
+            <input type="number" name="internal" 
+                   min="0" max="100" 
+                   placeholder="Enter marks (0 - 100)" required>
+        </div>
+
+        <div class="input-container">
+            <label class="input-label">📅 Attendance (%)</label>
+            <input type="number" name="attendance" 
+                   min="0" max="100" 
+                   placeholder="Enter attendance (0 - 100)" required>
+        </div>
+
+        <div class="input-container">
+            <label class="input-label">📚 Study Hours (per day)</label>
+            <input type="number" name="study" 
+                   min="1" max="7" 
+                   placeholder="Enter hours (1 - 7)" required>
+        </div>
+
+        <button type="submit">Predict My Score →</button>
+
+    </form>
+</div>
+</body>
+</html>
